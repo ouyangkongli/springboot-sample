@@ -20,33 +20,8 @@ public class KafkaSampleApplicationTests {
 
     @Test
     public void send() {
-//        for (int i = 0; i < 3; i++) {
-//            kafkaSender.send();
-//        }
-
-        TestThread testThread = new TestThread();
-        testThread.start();
-        try {
-            testThread.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-            System.out.println("3333333");
-        }
-
-        System.out.println("2222222");
-    }
-
-
-    private static class TestThread extends Thread {
-        @Override
-        public void run() {
-            try {
-                Thread.sleep(10000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            System.out.println("111111111");
+        for (int i = 0; i < 30; i++) {
+            kafkaSender.send();
         }
     }
-
 }
